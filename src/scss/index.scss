@@ -1,0 +1,25 @@
+// 下面定义的 ‘animation’ 用于 ‘lazyload’ 的动效
+$animation-time: 0.3s;
+@mixin make-lazy-motion($className, $keyframeName, $duration, $time-function-in, $time-function-out) {
+  .#{$className}-enter-active,
+  .#{$className}-appear {
+    animation-duration: $duration;
+    animation-fill-mode: both;
+  }
+
+  .#{$className}-leave-active,
+  .#{$className}-leave-active,
+  .#{$className}-leave-to {
+    display: none;
+  }
+
+  .#{$className}-enter-active,
+  .#{$className}-enter-to,
+  .#{$className}-appear {
+    animation-name: #{$keyframeName}In;
+    animation-timing-function: $time-function-in;
+  }
+}
+
+@include make-lazy-motion(lazyFade, aidFade, $animation-time, linear, linear);
+@include make-lazy-motion(lazyZoom, aidZoom, $animation-time, linear, linear);
