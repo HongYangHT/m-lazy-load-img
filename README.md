@@ -17,8 +17,13 @@ yarn add m-lazy-load-img
 
 ### Usage
 
-```js
-
+```html
+<t-lazy-load src="https://ss2.bdstatic.com/kfoZeXSm1A5BphGlnYG/skin/1.jpg" tag="div" class="img-wrap img1">
+  <img src="https://ss2.bdstatic.com/kfoZeXSm1A5BphGlnYG/skin/1.jpg">
+  <template slot="placeholder">
+    <loading v-model="showLoading" :auto-hide="autoHide">正在加载...</loading>
+  </template>
+</t-lazy-load>
 ```
 
 ### Props
